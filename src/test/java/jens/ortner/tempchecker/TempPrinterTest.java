@@ -33,6 +33,17 @@ class TempPrinterTest {
         assertEquals("Temp High",tempPrinter.printTemp(testUnit));
     }
 
+    @Test
+    public void shouldPrintPrintDateAndTempAndReturnString(){
+        //Arrange
+        Unit testUnit = new Unit("kitchen");
+        testUnit.newMapEntry(-18);
+        testUnit.newMapEntry(-50);
+        testUnit.newMapEntry(-68);
+        //Act & Assert
+        assertNotNull(tempPrinter.printTemp(testUnit));
+    }
+
 
 
 }
