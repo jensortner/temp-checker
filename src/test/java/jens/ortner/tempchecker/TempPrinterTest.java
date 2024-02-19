@@ -5,21 +5,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
-@SpringBootTest
+
 class TempPrinterTest {
-    @Autowired
-    TempPrinter tempPrinter;
-    @Autowired
-    Unit unit;
+
+    TempPrinter tempPrinter = new TempPrinter();
 
     @Test
-    public void shouldThrowForPrintingNullObject(){
+    public void shouldPrintErrorMsgForPrintingNullObject(){
         //Arrange
-        Unit testUnit = new Unit()
-
-        //Act
-
-        //Assert
+        Unit testUnit = null;
+        //Act & Assert
+        assertEquals("Empty Object",tempPrinter.printTemp(testUnit));
     }
+
+    @Test
+    public void shouldPrintErrorMsgForPrintingNullNameOfObject(){
+        //Arrange
+        Unit testUnit = new Unit(null);
+        //Act & Assert
+        assertEquals("Empty Object",tempPrinter.printTemp(testUnit));
+    }
+
+
 
 }

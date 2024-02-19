@@ -1,17 +1,13 @@
 package jens.ortner.tempchecker;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
-
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
-@Component
+
 public class Unit {
 
     private final String unitName;
-    private Integer temp;
-    private Map<Date,String> tempMap = new HashMap<>();
+    private final Map<LocalDateTime,String> tempMap = new HashMap<>();
 
     public Unit(String unitName) {
         this.unitName = unitName;
@@ -21,8 +17,12 @@ public class Unit {
         return unitName;
     }
 
-    public Map<Date, String> getTempMap() {
+    public Map<LocalDateTime, String> getTempMap() {
         return tempMap;
+    }
+
+    public void newMapEntry(String temp){
+        this.tempMap.put(LocalDateTime.now(), temp);
     }
 
 }
