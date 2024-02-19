@@ -1,5 +1,9 @@
 package jens.ortner.tempchecker;
 
+import org.springframework.stereotype.Service;
+
+
+@Service
 public class TempPrinter {
 
     public String printTemp(Unit unit) {
