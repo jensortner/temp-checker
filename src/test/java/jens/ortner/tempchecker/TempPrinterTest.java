@@ -9,11 +9,9 @@ class TempPrinterTest {
     TempPrinter tempPrinter = new TempPrinter();
 
     @Test
-    public void shouldPrintErrorMsgForPrintingNullObject(){
-        //Arrange
-        Unit testUnit = null;
-        //Act & Assert
-        assertEquals("Empty Object",tempPrinter.printTemp(testUnit));
+    public void shouldPrintErrorMsgForPrintingNullObject() {
+        //Arrange, Act & Assert
+        assertEquals("Empty Object",tempPrinter.printTemp(null));
     }
 
     @Test
