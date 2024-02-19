@@ -1,6 +1,5 @@
 package jens.ortner.tempchecker;
 
-import org.springframework.stereotype.Component;
 
 
 public class TempPrinter {
@@ -9,7 +8,10 @@ public class TempPrinter {
         if (unit == null || unit.getUnitName() == null) {
             return "Empty Object";
         }
-
+        boolean temp = unit.getTempMap().values().stream().anyMatch(val -> val>-18);
+        if (temp) {
+           return  "Temp High";
+        }
         return "";
     }
 }

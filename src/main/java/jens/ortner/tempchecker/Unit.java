@@ -7,7 +7,7 @@ import java.util.Map;
 public class Unit {
 
     private final String unitName;
-    private final Map<LocalDateTime,String> tempMap = new HashMap<>();
+    private final Map<LocalDateTime,Integer> tempMap = new HashMap<>();
 
     public Unit(String unitName) {
         this.unitName = unitName;
@@ -17,11 +17,11 @@ public class Unit {
         return unitName;
     }
 
-    public Map<LocalDateTime, String> getTempMap() {
+    public Map<LocalDateTime, Integer> getTempMap() {
         return tempMap;
     }
 
-    public void newMapEntry(String temp){
+    public void newMapEntry(Integer temp){
         this.tempMap.put(LocalDateTime.now(), temp);
     }
 
